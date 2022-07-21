@@ -311,6 +311,7 @@ kokomi = Character('Kokomi', 15, 350, 0.8, 2.5, 6, 3, 3, 'healer', 'Hydro')
 diluc = Character('Diluc', 25, 200, 1.3, 2, 3, 2, 1, 'dps', 'Pyro')
 fischl = Character('Fischl', 20, 150, 1, 2, 8, 1, 4, 'sub', 'Electro')
 
+# enemy = Enemy('Name', atk, hp, res, element)
 hilichurl = Enemy('Hilichurl', 10, 100, 0.1, None)
 mitachurl = Enemy('Axe Mitachurl', 15, 300, 0.1, None)
 
@@ -322,7 +323,8 @@ def startAbyss(party, enemyList):
 
 
 while True:
-    start = input('Press Enter to start the battle, or type "info" to view character info ').lower()
+    print('Press Enter to start the battle, type "info" to view character info, or "help" for how to play')
+    start = input().lower()
 
     if start == 'info':
         print('''
@@ -330,6 +332,10 @@ Diluc: On field Pyro DPS. Skill does heavy DMG to 3 targets (cd: 3).
 Kokomi: Healer. High HP. Skill heals whole party for 3 turns (cd: 6)
 Fischl: Off-field Electro Sub DPS. Skill deals sustained single target DMG for 4 turns (cd: 8)
 ''')
+    elif start == 'help':
+        print('''How to Play
+On each turn, press enter to attack, type "skill" to use your skill, or type "switch" to switch characters.
+Type the number corresponding to the enemy you want to attack.''')
     else:
         print()
         startAbyss([diluc, kokomi, fischl],
