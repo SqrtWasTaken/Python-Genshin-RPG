@@ -1,6 +1,7 @@
 import time
 import math
 
+#hi
 
 class Character:
     def __init__(self, name, atk, hp, atkMulti, skillMulti, skillCD, skillRange, skillDur, type, element):
